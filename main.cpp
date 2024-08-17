@@ -7,20 +7,13 @@ using std::string;
 void DumpFile(const string);
 
 int main(int argc, char* argv[]) {
-
-    const string program_version = {
-        "0.1-dev"
-    };
-
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <filename>\n";
         return -1;
     }
 
     if (string(argv[1]) == "--v" || string(argv[1]) == "--version") {
-        std::cout << "Cat - Dump your files |" << program_version << '\n';
-        std::cout << "Programmer: Ravi Gabriel Valentim da Silva\n";
-
+        std::cout << "Wcat - Dump your files\n";
         return 0;
     }
     else if (string(argv[1]) == "--h" || string(argv[1]) == "--help") {
@@ -45,7 +38,7 @@ void DumpFile(const string file_path) {
     }
 
     string line;
-    int line_number = { 1 };
+    int line_number = 1;
 
     while (std::getline(file, line)) {
         std::cout << line_number << " - " << line << '\n';
